@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    @apply bg-[#1f1f1f] h-full overflow-x-hidden;
+}
+
+#__next {
+    @apply h-full;
+}
+
+html {
+    @apply h-full;
+}
+
+input {
+    outline: 3px solid #A0A2A5;
+    transition: outline-color 250ms;
+}
+  
+input:focus {
+    outline-color: #3c50eb;
+}
+
+:hover.filter-gray{
+    filter: brightness(0) saturate(100%) invert(74%) sepia(2%) saturate(385%) hue-rotate(177deg) brightness(86%) contrast(94%);
+    transition: 0.5s;
+}
+
+
+.css-6hp17o-MuiList-root-MuiMenu-list {
+    background-color: #1f1f1f !important;
+    padding: 3px 2px 3px 2px !important;
+}
+
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root {
+    padding: 10px 14px 10px 14px !important;
+    transition: 0.4s;
+}
+
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root:hover {
+    background-color: #1f1f1f !important;
+    border-radius: 5%;
+}

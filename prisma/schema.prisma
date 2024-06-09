@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Jogos {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+  thumbnailUrl String
+  secondThumbnailUrl String?
+  isNew Boolean
+  price Float
+  olderPrice Float?
+  percentageLess Int?
+  isGamePass Boolean
+  cheapestSeller String
+  isMainMenuHighlight Boolean @default(false)
+  isSteamHighlight Boolean @default(false)
+  isEpicHighlight Boolean @default(false)
+  isEnebaHighLight Boolean @default(false)
+  isNewsHighlight Boolean @default(false)
+  description String?
+}
