@@ -1,14 +1,19 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsSearch } from "react-icons/bs"
 
 const SearchInput = () => {
-    const [loadingBar, setloadingBar] = useState(false);
     const [focused, setFocused] = useState(false);
-
     const [searchQuery, setSearchQuery] = useState("");
+
     const router = useRouter();
+
+    useEffect(() => {
+        if (searchQuery.trim() !== "") {
+            setFocused(true);
+        }
+    }, [searchQuery]);
 
     const onSearch = (e: React.FormEvent) => {
         e.preventDefault();
@@ -19,12 +24,7 @@ const SearchInput = () => {
 
     const handleIconClick = (e: React.MouseEvent) => {
         e.preventDefault();
-    
         if (searchQuery.trim() !== "") {
-          onSearch(e);
-        }
-
-        if (searchQuery.trim() === "") {
             onSearch(e);
         }
     };
@@ -43,13 +43,11 @@ const SearchInput = () => {
                 <label
                     htmlFor="searchplaceholder"
                     className={`absolute left-2 transition-all duration-300 cursor-pointer text-[13px] top-[0.6rem] ${
-                        focused || searchQuery ? "-top-[1.11rem] left-[0.205rem] text-[#A0A2A5] text-[11.5px] cursor-default" : "top-2 text-[#A0A2A5]"
+                        focused || searchQuery ? "top-[-1.32rem] left-[0.205rem] text-[#A0A2A5] text-[11.5px] cursor-default" : "top-2 text-[#A0A2A5]"
                     }`}
                 >
                     Pesquisar por título...
                 </label>
-
-                {loadingBar && <div className="loading-bar" />}
             </div>
 
             <div

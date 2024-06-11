@@ -18,7 +18,7 @@ export default async function handler(req:NextApiRequest, res: NextApiResponse) 
             throw new Error("Pesquisa inválida!")
         }
 
-        const games: {[key: string]: any} = {jogos: prismadb.jogos}       
+        const games: {[key: string]: any} = {jogos: prismadb.games}       
         
         let searchGames: any[] = [];
 
@@ -27,26 +27,14 @@ export default async function handler(req:NextApiRequest, res: NextApiResponse) 
             where: {
                 OR: [
                     {
-                        title: {
+                        name: {
                             contains: query,
                             mode: 'insensitive'
                         }
                     },
                     {
-                        publisher: {
+                        subname: {
                             contains: query,
-                            mode: 'insensitive'
-                        }
-                    },
-                    {
-                        secondThumbnailUrl: {
-                            contains: query,
-                            mode: 'insensitive'
-                        }
-                    },
-                    {
-                        genre: {
-                            contains: query.replace(/,/g, " "),
                             mode: 'insensitive'
                         }
                     }

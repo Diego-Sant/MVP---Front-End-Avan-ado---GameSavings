@@ -7,9 +7,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Jogos {
+model Games {
   id String @id @default(auto()) @map("_id") @db.ObjectId
   name String
+  subname String?
   thumbnailUrl String
   secondThumbnailUrl String?
   isNew Boolean
@@ -17,7 +18,9 @@ model Jogos {
   olderPrice Float?
   percentageLess Int?
   isGamePass Boolean
+  gamePassLink String?
   cheapestSeller String
+  sellerLink String
   isMainMenuHighlight Boolean @default(false)
   isSteamHighlight Boolean @default(false)
   isEpicHighlight Boolean @default(false)

@@ -9,7 +9,7 @@ async function main() {
   const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 
   for (const jogo of data) {
-    await prisma.jogos.create({
+    await prisma.games.create({
       data: jogo,
     });
   }

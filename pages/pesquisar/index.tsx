@@ -1,3 +1,5 @@
+import GameCard from "@/components/GameCard";
+import Navbar from "@/components/Navbar";
 import {useSearchParams} from "next/navigation";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -70,6 +72,29 @@ const SearchPage = () => {
 
     return (
         <>
+            <Navbar />
+            <div className="relative max-w-[1064px] m-auto w-[100%]">
+                <p className="mt-[3.5rem] mb-[2.5rem] text-[18px] text-white font-semibold ml-6 lg:ml-0">Resultado da pesquisa: <span className="text-[#F28500]">{searchQuery}</span></p>
+                <div className="flex justify-center">
+                    
+                    {data && data.length > 0 ? (
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-x-[6.5rem]">
+                            {data.map((game: any) => (
+                                <GameCard key={game.id} data={game} />
+                            ))}
+                        </div>
+                        ) : (
+                            !isLoading && showNoResults && (
+                                <div className="text-white font-bold flex justify-center text-[18px] w-screen ml-6 sm:ml-0">
+                                    <p>Não há nenhum jogo com esse título em nosso catálogo!</p>
+                                </div>
+                            )
+                        )
+                    }
+                    
+                </div>
+                {isLoading && <LoadingScreen />}
+            </div>
         </>
     )
 }

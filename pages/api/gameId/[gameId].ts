@@ -18,7 +18,7 @@ export default async function handler(req:NextApiRequest, res: NextApiResponse) 
             throw new Error("ID inválido!")
         }
 
-        const games: {[key: string]: any} = {jogos: prismadb.jogos}
+        const games: {[key: string]: any} = {jogos: prismadb.games}
         
         let existingGame = null;
 
