@@ -18,7 +18,7 @@ const SearchInput = () => {
             await router.push(`/`);
         } else {
             const encodedSearchQuery = encodeURI(searchQuery);
-            await router.push(`/pesquisar?q=${encodedSearchQuery}`);
+            await router.push(`/search?q=${encodedSearchQuery}`);
         }
 
         setIsLoading(false);

@@ -9,6 +9,8 @@ interface GameCardProps {
 }
 
 const GameCard: React.FC<GameCardProps> = ({ data, useSecondThumbnail = false, useThirdThumbnail = false }) => {
+    const [screenWidth, setScreenWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
+
     const [titleWidth, setTitleWidth] = useState<number>(0);
     const titleRef = useRef<HTMLDivElement>(null);
 
@@ -17,6 +19,62 @@ const GameCard: React.FC<GameCardProps> = ({ data, useSecondThumbnail = false, u
             setTitleWidth(titleRef.current.offsetWidth);
         }
     }, [data.name]);
+
+    useEffect(() => {
+        const handleResize = () => {
+          setScreenWidth(window.innerWidth);
+        };
+    
+        window.addEventListener('resize', handleResize);
+    
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    const getStyles = () => {
+        if (screenWidth < 400) {
+            return useSecondThumbnail || useThirdThumbnail
+              ? { marginRight: 155, columnGap: 10 }
+              : {};
+        } else if (screenWidth > 400 && screenWidth < 640) {
+          return useSecondThumbnail || useThirdThumbnail
+            ? { marginRight: 105, columnGap: 10 }
+            : {};
+        } else {
+          return useSecondThumbnail || useThirdThumbnail
+            ? { marginRight: 8, columnGap: 15 }
+            : { marginRight: 1, columnGap: 6 };
+        }
+    };
+
+    const getWidthAndHeightStyles = () => {
+        if (screenWidth < 400) {
+            if (useSecondThumbnail) {
+                return { width: 380, height: 350 };
+            } else if (useThirdThumbnail) {
+                return { width: 380, height: 200 };
+            } else {
+                return { width: 285, height: 390 };
+            }
+        } else if (screenWidth < 640 && screenWidth > 360) {
+            if (useSecondThumbnail) {
+                return { width: 430, height: 350 };
+            } else if (useThirdThumbnail) {
+                return { width: 430, height: 200 };
+            } else {
+                return { width: 285, height: 390 };
+            }
+        } else {
+            if (useSecondThumbnail) {
+                return { width: 530, height: 450 };
+            } else if (useThirdThumbnail) {
+                return { width: 530, height: 220 };
+            } else {
+                return { width: 285, height: 390 };
+            }
+        }
+    };
 
     const getPlatformImage = (platform: string) => {
         switch (platform) {
@@ -66,16 +124,31 @@ const GameCard: React.FC<GameCardProps> = ({ data, useSecondThumbnail = false, u
     const imageWidth = useSecondThumbnail || useThirdThumbnail ? 530 : 285;
     const imageHeight = useSecondThumbnail || useThirdThumbnail ? 300 : 366;
 
-    const containerWidth = useSecondThumbnail || useThirdThumbnail ? 450 : 285;
-
     const lowerBarWidth = useSecondThumbnail || useThirdThumbnail ? 530 : 285;
     const lowerBarHeight = useSecondThumbnail ? 90 : useThirdThumbnail ? 75 : 77;
 
-    const titleFontSize = data.name.length <= 15 ? "30px" : "22px";
-    const truncatedName = useThirdThumbnail ? data.name.length > 40 ? data.name.substring(0, 40) + "..." : data.name : data.name.length > 19 ? data.name.substring(0, 19) + "..." : data.name
+    const titleFontSize = data.name.length <= 15 && screenWidth < 640 && useSecondThumbnail ? "26px" :
+        data.name.length <= 15 && screenWidth < 640 ? "22px" :
+        data.name.length <= 15 ? "30px" :
+        screenWidth < 640 ? "15px" : "22px";
+
+
+    const getTruncatedName = () => {
+        if (useThirdThumbnail && screenWidth < 400) {
+            return data.name.length > 27 ? data.name.substring(0, 27) + "..." : data.name;
+        }else if (useThirdThumbnail && screenWidth < 640) {
+            return data.name.length > 45 ? data.name.substring(0, 45) + "..." : data.name;
+        } else if (useThirdThumbnail) {
+            return data.name.length > 40 ? data.name.substring(0, 40) + "..." : data.name;
+        } else {
+            return data.name.length > 19 ? data.name.substring(0, 19) + "..." : data.name;
+        }
+    };
+
+    const truncatedName = getTruncatedName();
 
     return (
-        <div className={`flex flex-col w-[${containerWidth}px] rounded-md overflow-hidden`}>
+        <div className="flex flex-col rounded-md overflow-hidden" style={getWidthAndHeightStyles()}>
             <div className='w-full h-full relative'>
 
                 {data.isNew && 
@@ -91,9 +164,21 @@ const GameCard: React.FC<GameCardProps> = ({ data, useSecondThumbnail = false, u
                     alt="Artwork do jogo" 
                 />
 
-                <div className="bg-[#F28500] absolute z-[15] h-[59px] ml-2 px-1 rounded-md" 
-                    style={useSecondThumbnail ? {transform: `translateY(-${73}px)` } 
-                    : useThirdThumbnail && data.name.length > 15 ? {transform: `translateY(-${110}px)` } : useThirdThumbnail ? {transform: `translateY(-${115}px)` } : {transform: `translateY(-${121}px)` }} ref={titleRef}
+                <div className="bg-[#F28500] absolute z-[15] h-[59px] ml-2 px-1 rounded-md" ref={titleRef}
+                    style={useSecondThumbnail && screenWidth < 400 ? {transform: `translateY(-${65}px)` }
+                    : useSecondThumbnail && screenWidth > 640 ? {transform: `translateY(-${73}px)` } 
+                    : useSecondThumbnail && screenWidth < 640 ? {transform: `translateY(-${95}px)` }
+
+                    : useThirdThumbnail && screenWidth < 400 && data.name.length > 15 ? {transform: `translateY(-${70}px)` }
+                    : useThirdThumbnail && screenWidth < 400 ? {transform: `translateY(-${75}px)` }
+
+                    : useThirdThumbnail && screenWidth < 640 && data.name.length > 15 ? {transform: `translateY(-${85}px)` }
+                    : useThirdThumbnail && screenWidth < 640 ? {transform: `translateY(-${88}px)` } 
+
+                    : useThirdThumbnail && screenWidth > 640 && data.name.length > 15 ? {transform: `translateY(-${110}px)` }
+                    : useThirdThumbnail && screenWidth > 640 ? {transform: `translateY(-${120}px)` }
+
+                    : {transform: `translateY(-${121}px)` }} 
                 >
 
                     <p className="uppercase text-white font-semibold mt-1" style={{ fontSize: titleFontSize }}>
@@ -115,7 +200,7 @@ const GameCard: React.FC<GameCardProps> = ({ data, useSecondThumbnail = false, u
                             R$ {(data?.price).toFixed(2).replace(".", ",")}
                         </h1>
 
-                        <div className="flex -mt-[0.650rem]" style={useSecondThumbnail || useThirdThumbnail ? {marginRight: 8, columnGap: 15} : {marginRight: 1, columnGap: 6}}>
+                        <div className="flex -mt-[0.650rem]" style={getStyles()}>
                             {data?.isGamePass && data?.gamePassLink && (
                                 <div className="bg-[#F28500] rounded-md p-1 w-[60px] h-[40px] flex items-center justify-center cursor-pointer transition hover:bg-[#C26A00]">
                                     <Link href={data?.gamePassLink} target="_blank">

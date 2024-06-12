@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import HighLights from "@/components/Highlights";
+import LowerPrices from "@/components/LowerPrices";
 
 export default function Home() {
 
@@ -11,17 +12,23 @@ export default function Home() {
 
       <main className="flex-grow">
 
-        <div className="flex items-center justify-center mt-[3.438rem]">
-          <p className="uppercase text-[18px] text-white font-bold">
+      <div className="flex items-center justify-center mt-[3.438rem]">
+        <div className="text-center max-w-md md:max-w-none">
+          <p className="uppercase text-[16px] sm:text-[18px] text-white font-bold">
             Descubra onde encontrar o
-            <span className="ml-1 text-[#F28500] mr-1">menor preço</span>
+            <span className="text-[#F28500]"> menor preço </span>
             para seus
-            <span className="ml-1 text-[#F28500]">jogos favoritos</span>
+            <span className="text-[#F28500]"> jogos favoritos</span>
           </p>
         </div>
+      </div>
 
         <div className="mt-[3.375rem]">
           <HighLights />
+        </div>
+
+        <div className="mt-[25.375rem] lg:mt-[5.375rem]">
+          <LowerPrices />
         </div>
 
       </main>
