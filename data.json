@@ -13,5 +13,51 @@
       "sellerLink": "https://www.kinguin.net/category/234873/hades-ii-pc-steam-account",
       "isNewsHighlight": true,
       "description": "Transcenda o Submundo com feitiços das trevas para enfrentar o titã do tempo nesta sequência mágica do premiado roguelike de exploração de masmorras."
+    },
+    {
+      "name": "Fallout 76",
+      "subname": "",
+      "thumbnailUrl": "https://diego-sant.github.io/QuizApp/img/img230.svg",
+      "secondThumbnailUrl": "https://diego-sant.github.io/QuizApp/img/img229.svg",
+      "isNew": false,
+      "price": 1.08,
+      "olderPrice": 155.00,
+      "percentageLess": 99,
+      "isGamePass": true,
+      "gamePassLink": "https://www.xbox.com/pt-BR/games/fallout-76",
+      "cheapestSeller": "Kinguin",
+      "sellerLink": "https://www.kinguin.net/pt/category/133207/fallout-76-windows-10-11-cd-key",
+      "isMainMenuHighlight": true,
+      "description": ""
+    },
+    {
+      "name": "God of War",
+      "subname": "God of War 4",
+      "thumbnailUrl": "https://diego-sant.github.io/QuizApp/img/img231.svg",
+      "secondThumbnailUrl": "https://diego-sant.github.io/QuizApp/img/img232.svg",
+      "isNew": false,
+      "price": 99.95,
+      "olderPrice": 199.90,
+      "percentageLess": 50,
+      "isGamePass": false,
+      "cheapestSeller": "Epic",
+      "sellerLink": "https://store.epicgames.com/pt-BR/p/god-of-war",
+      "isMainMenuHighlight": true,
+      "description": ""
+    },
+    {
+      "name": "DRAGON BALL Z: KAKAROT - Deluxe Edition",
+      "subname": "",
+      "thumbnailUrl": "https://diego-sant.github.io/QuizApp/img/img233.svg",
+      "secondThumbnailUrl": "https://diego-sant.github.io/QuizApp/img/img234.svg",
+      "isNew": false,
+      "price": 81.87,
+      "olderPrice": 327.50,
+      "percentageLess": 75,
+      "isGamePass": false,
+      "cheapestSeller": "Nuuvem",
+      "sellerLink": "https://www.nuuvem.com/br-pt/item/dragon-ball-z-kakarot-deluxe-edition",
+      "isMainMenuHighlight": true,
+      "description": ""
     }
 ]
