@@ -27,7 +27,7 @@ export default function Home() {
           <HighLights />
         </div>
 
-        <div className="mt-[25.375rem] lg:mt-[5.375rem]">
+        <div className="marginTopResponsive lg:mt-[5.375rem]">
           <LowerPrices />
         </div>
 

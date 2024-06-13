@@ -63,18 +63,36 @@ export default function LowerPrices() {
                 swiper.params.navigation.nextEl = navigationNextRef.current;
             }
         }} modules={[Navigation]}
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 8,
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 4,
+          },
+          768: {
+            slidesPerView: 2.5,
+            spaceBetween: 10,
+          },
+          1024: {
+            slidesPerView: 3.5,
+            spaceBetween: 16,
+          },
+        }}
     >
         {games.map((game) => (
           <SwiperSlide key={game.id}>
-            <div className='flex flex-1 gap-[10px] relative overflow-hidden'>
+            <div className='flex flex-1 gap-[10px] relative overflow-hidden justify-center items-center'>
               <GameCard data={game} />
             </div>
           </SwiperSlide>
         ))}
     </Swiper>
 
-        <div ref={navigationPrevRef} className="swiper-button-prev bg-[#F28500] rounded-full p-[24px]"></div>
-        <div ref={navigationNextRef} className="swiper-button-next bg-[#F28500] rounded-full p-[24px]"></div>
+        <div ref={navigationPrevRef} className="swiper-button-prev xl:transform xl:translate-x-[-65%] bg-[#F28500] rounded-full p-[24px]"></div>
+        <div ref={navigationNextRef} className="swiper-button-next xl:transform xl:translate-x-[65%] custom-navigation-next bg-[#F28500] rounded-full p-[24px]"></div>
       {isLoading && <LoadingScreen />}
       
     </main>

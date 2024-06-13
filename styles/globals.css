@@ -48,6 +48,24 @@ input:focus + .labelminwidth, input:not(:placeholder-shown) + .labelminwidth {
   }
 }
 
+@media (max-width: 640px) {
+  .labelminwidth {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1023px) {
+  .marginTopResponsive {
+    margin-top: 35rem;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 639px) {
+  .marginTopResponsive {
+    margin-top: 25.375rem;
+  }
+}
+
 :hover.filter-gray{
   filter: brightness(0) saturate(100%) invert(74%) sepia(2%) saturate(385%) hue-rotate(177deg) brightness(86%) contrast(94%);
   transition: 0.5s;
