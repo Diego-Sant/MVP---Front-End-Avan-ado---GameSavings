@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import HighLights from "@/components/Highlights";
 import LowerPrices from "@/components/LowerPrices";
+import BiggerDiscounts from "@/components/BiggerDiscounts";
 
 export default function Home() {
 
@@ -29,6 +30,10 @@ export default function Home() {
 
         <div className="marginTopResponsive lg:mt-[5.375rem]">
           <LowerPrices />
+        </div>
+
+        <div className="mt-[3.375rem] lg:mt-[5.375rem]">
+          <BiggerDiscounts />
         </div>
 
       </main>

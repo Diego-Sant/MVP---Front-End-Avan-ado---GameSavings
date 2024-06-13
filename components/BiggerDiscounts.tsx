@@ -9,10 +9,10 @@ import "swiper/swiper-bundle.css";
 
 interface Game {
   id: string;
-  price: number;
+  percentageLess: number;
 }
 
-export default function LowerPrices() {
+export default function BiggerDiscounts() {
   const [games, setGames] = useState<Game[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -25,7 +25,7 @@ export default function LowerPrices() {
         const response = await fetch('/api/games');
         const data: Game[] = await response.json();
 
-        const sortedGames = data.sort((a, b) => a.price - b.price);
+        const sortedGames = data.sort((a, b) => b.percentageLess - a.percentageLess);
 
         const limitedGames = sortedGames.slice(0, 10);
 
@@ -52,9 +52,9 @@ export default function LowerPrices() {
       
       <div className="flex items-center gap-x-2 mb-2">
         <div className="w-[45px] h-[45px] bg-[#F28500] rounded-full flex items-center justify-center">
-          <Image width={25} height={23} src="/images/MenorPreco.svg" alt="Ícone de fogo" />
+          <Image width={35} height={35} src="/images/Descontos.svg" alt="Ícone de porcentagem" />
         </div>
-        <p className="text-white uppercase text-[24px] font-semibold">Menores preços</p>
+        <p className="text-white uppercase text-[24px] font-semibold">Maiores descontos</p>
       </div>
 
     <Swiper className="w-[100%]" spaceBetween={16} slidesPerView={3.5} pagination={{clickable: true}}
