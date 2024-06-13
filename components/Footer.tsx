@@ -1,15 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
-
-
-import { Menu as MenuIcon } from "@mui/icons-material";
-import { Button, Menu, MenuItem } from "@mui/material";
-
 import Link from "next/link";
 import Image from "next/image";
-import SearchInput from "./SearchInput";
 
 export default function Footer() {
     const router = useRouter();
@@ -23,7 +16,7 @@ export default function Footer() {
     ];
 
     const judicialCategories = [
-        { id: 1, text: 'EULA da loja', link: '' },
+        { id: 1, text: 'EULA do site', link: '' },
         { id: 2, text: 'Política de privacidade', link: '' },
         { id: 3, text: 'Termos de serviço', link: '' },
     ];
@@ -49,9 +42,11 @@ export default function Footer() {
             </div>
 
             <div className="flex flex-col justify-center items-center mt-[1.25rem]">
-                <Image src="/images/GameSavings.svg" 
-                    alt="GameSavings" width={95} height={95} className="cursor-pointer hover:brightness-75" 
-                />
+                <Link href="/">
+                    <Image src="/images/GameSavings.svg" 
+                        alt="GameSavings" width={95} height={95} className="cursor-pointer hover:brightness-75" 
+                    />
+                </Link>
                 <p className="text-[#5B5B5B] text-[10px] sm:text-[12px] mt-[1.875rem]">
                     ™ & © 2024 GameSavings. Todos os direitos reservados. 
                 </p>

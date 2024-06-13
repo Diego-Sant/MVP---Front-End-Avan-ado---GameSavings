@@ -1,14 +1,14 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
+import { useRouter } from "next/router";
+import Link from "next/link";
+import Image from "next/image";
 
 import { Menu as MenuIcon } from "@mui/icons-material";
 import { Button, Menu, MenuItem } from "@mui/material";
 
-import Link from "next/link";
-import Image from "next/image";
 import SearchInput from "./SearchInput";
 
 export default function Navbar() {

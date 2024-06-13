@@ -1,6 +1,7 @@
+import React, { useState, useEffect, useRef } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect, useRef } from "react";
 
 interface GameCardProps {
     data: Record<string, any>;

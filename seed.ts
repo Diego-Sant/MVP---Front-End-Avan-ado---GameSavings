@@ -9,11 +9,22 @@ async function main() {
   const data = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 
   for (const jogo of data) {
-    await prisma.games.create({
-      data: jogo,
+    const existingGame = await prisma.games.findFirst({
+      where: {
+        name: jogo.name,
+        subname: jogo.subname,
+      },
     });
+
+    if (!existingGame) {
+      await prisma.games.create({
+        data: jogo,
+      });
+      console.log(`Jogo ${jogo.name} - ${jogo.subname || ''} inserido com sucesso!`);
+    } else {
+      console.log(`Jogo ${jogo.name} - ${jogo.subname || ''} já existe no banco de dados.`);
+    }
   }
-  console.log('Data inserida com sucesso!');
 }
 
 main()

@@ -59,5 +59,48 @@
       "sellerLink": "https://www.nuuvem.com/br-pt/item/dragon-ball-z-kakarot-deluxe-edition",
       "isMainMenuHighlight": true,
       "description": ""
+    },
+    {
+      "name": "Hogwarts Legacy",
+      "subname": "",
+      "thumbnailUrl": "https://diego-sant.github.io/QuizApp/img/img235.svg",
+      "secondThumbnailUrl": "",
+      "isNew": false,
+      "price": 93.86,
+      "olderPrice": 249.99,
+      "percentageLess": 62,
+      "isGamePass": false,
+      "cheapestSeller": "G2A",
+      "sellerLink": "https://www.g2a.com/pt/hogwarts-legacy-pc-steam-account-account-global-i10000218808030?uuid=cc3001a4-ac93-441a-a755-36ab230f46d9",
+      "description": ""
+    },
+    {
+      "name": "Cyberpunk 2077",
+      "subname": "",
+      "thumbnailUrl": "https://diego-sant.github.io/QuizApp/img/img236.svg",
+      "secondThumbnailUrl": "",
+      "isNew": false,
+      "price": 75.95,
+      "olderPrice": 199.90,
+      "percentageLess": 62,
+      "isGamePass": false,
+      "cheapestSeller": "Kinguin",
+      "sellerLink": "https://www.kinguin.net/category/137554/cyberpunk-2077-steam-account?o=66110956bd7d5c0001f7ab52",
+      "isEnebaHighLight": true,
+      "description": ""
+    },
+    {
+      "name": "GTFO",
+      "subname": "",
+      "thumbnailUrl": "https://diego-sant.github.io/QuizApp/img/img237.svg",
+      "secondThumbnailUrl": "",
+      "isNew": false,
+      "price": 75.95,
+      "olderPrice": 199.90,
+      "percentageLess": 62,
+      "isGamePass": false,
+      "cheapestSeller": "Steam",
+      "sellerLink": "https://store.steampowered.com/app/493520/GTFO/",
+      "description": ""
     }
 ]

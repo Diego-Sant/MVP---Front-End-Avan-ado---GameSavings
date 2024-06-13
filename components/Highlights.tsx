@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import GameCard from "@/components/GameCard"; // Importando o componente GameCard
+
+import GameCard from "@/components/GameCard";
+
 import Image from "next/image";
 
 interface Game {
@@ -19,7 +21,7 @@ export default function HighLights() {
         setHighlights(data);
         setIsLoading(false);
       } catch (error) {
-        console.error("Erro ao buscar destaques:", error);
+        console.error("Erro ao buscar os jogos:", error);
       }
     };
 

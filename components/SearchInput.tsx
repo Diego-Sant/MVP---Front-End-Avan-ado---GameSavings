@@ -1,7 +1,7 @@
-import Image from "next/image";
+import { useState } from "react";
+
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { BsSearch } from "react-icons/bs"
+import Image from "next/image";
 
 const SearchInput = () => {
     const [searchQuery, setSearchQuery] = useState("");

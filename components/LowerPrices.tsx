@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import GameCard from "@/components/GameCard"; // Importando o componente GameCard
+
+import GameCard from "@/components/GameCard";
+
 import Image from "next/image";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -32,7 +34,7 @@ export default function LowerPrices() {
         setGames(limitedGames);
         setIsLoading(false);
       } catch (error) {
-        console.error("Erro ao buscar destaques:", error);
+        console.error("Erro ao buscar os jogos:", error);
       }
     };
 
