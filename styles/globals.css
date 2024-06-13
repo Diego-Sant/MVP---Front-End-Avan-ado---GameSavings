@@ -69,6 +69,19 @@ input:focus + .labelminwidth, input:not(:placeholder-shown) + .labelminwidth {
   border-radius: 5%;
 }
 
+.swiper-button-prev:after {
+  padding-right: 4px !important;
+}
+
+.swiper-button-next:after {
+  padding-left: 4px !important;
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+  font-size: 25px !important;
+  color: white !important;
+}
+
 /* ------------------CSS de Loadings------------------------ */
 
 @keyframes pulse {

@@ -1,29 +1,40 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import GameCard from "@/components/GameCard"; // Importando o componente GameCard
 import Image from "next/image";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/swiper-bundle.css";
+
 interface Game {
   id: string;
+  price: number;
 }
 
 export default function LowerPrices() {
-  const [highlights, setHighlights] = useState<Game[]>([]);
+  const [games, setGames] = useState<Game[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchHighlights = async () => {
-      try {
-        const response = await fetch('/api/highlight');
-        const data = await response.json();
+  const navigationPrevRef = useRef<HTMLDivElement>(null);
+  const navigationNextRef = useRef<HTMLDivElement>(null);
 
-        setHighlights(data);
+  useEffect(() => {
+    const fetchGames = async () => {
+      try {
+        const response = await fetch('/api/games');
+        const data: Game[] = await response.json();
+
+        const sortedGames = data.sort((a, b) => a.price - b.price);
+
+        setGames(sortedGames);
         setIsLoading(false);
       } catch (error) {
         console.error("Erro ao buscar destaques:", error);
       }
     };
 
-    fetchHighlights();
+    fetchGames();
   }, []);
 
   const LoadingScreen = () => {
@@ -44,10 +55,28 @@ export default function LowerPrices() {
         <p className="text-white uppercase text-[24px] font-semibold">Menores preços</p>
       </div>
 
-      <div className="text-white flex flex-col sm:flex-row h-[450px] gap-[10px]">
-        
-      </div>
+    <Swiper className="w-[100%]" spaceBetween={16} slidesPerView={3.5} pagination={{clickable: true}}
+        navigation={{prevEl: navigationPrevRef.current, nextEl: navigationNextRef.current}}
+        onBeforeInit={(swiper) => {
+            if (swiper.params.navigation && typeof swiper.params.navigation !== 'boolean') {
+                swiper.params.navigation.prevEl = navigationPrevRef.current;
+                swiper.params.navigation.nextEl = navigationNextRef.current;
+            }
+        }} modules={[Navigation]}
+    >
+        {games.map((game) => (
+          <SwiperSlide key={game.id}>
+            <div className='flex flex-1 gap-[10px] relative overflow-hidden'>
+              <GameCard data={game} />
+            </div>
+          </SwiperSlide>
+        ))}
+    </Swiper>
+
+        <div ref={navigationPrevRef} className="swiper-button-prev bg-[#F28500] rounded-full p-[24px]"></div>
+        <div ref={navigationNextRef} className="swiper-button-next bg-[#F28500] rounded-full p-[24px]"></div>
       {isLoading && <LoadingScreen />}
+      
     </main>
   );
 }
