@@ -41,7 +41,7 @@ export default function Navbar() {
 
     const categories = [
         { id: 1, icon: <Image src="/images/Steam.svg" alt="Steam" width={15} height={15} />, text: 'Steam', link: '' },
-        { id: 2, icon: <Image src="/images/Eneba.svg" alt="Eneba" width={15} height={15} />, text: 'Eneba', link: '' },
+        { id: 2, icon: <Image src="/images/Kinguin.svg" alt="Kinguin" width={15} height={15} />, text: 'Kinguin', link: '' },
         { id: 3, icon: <Image src="/images/Epic.svg" alt="Epic Games" width={15} height={15} />, text: 'Epic Games', link: '' },
         { id: 4, icon: <Image src="/images/Novidades.svg" alt="Novidades" width={15} height={15} />, text: 'Novidades', link: '' },
     ];

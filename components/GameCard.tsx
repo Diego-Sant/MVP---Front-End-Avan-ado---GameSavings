@@ -130,7 +130,7 @@ const GameCard: React.FC<GameCardProps> = ({ data, useSecondThumbnail = false, u
 
     const titleFontSize = data.name.length <= 15 && screenWidth < 640 && useSecondThumbnail ? "26px" :
         data.name.length <= 15 && screenWidth < 640 ? "22px" :
-        data.name.length <= 15 ? "30px" :
+        data.name.length <= 15 && screenWidth > 640 ? "22px" :
         screenWidth < 640 ? "15px" : "22px";
 
 
@@ -141,8 +141,10 @@ const GameCard: React.FC<GameCardProps> = ({ data, useSecondThumbnail = false, u
             return data.name.length > 45 ? data.name.substring(0, 45) + "..." : data.name;
         } else if (useThirdThumbnail) {
             return data.name.length > 40 ? data.name.substring(0, 40) + "..." : data.name;
+        } else if (screenWidth < 640) {
+            return data.name.length > 27 ? data.name.substring(0, 27) + "..." : data.name;
         } else {
-            return data.name.length > 19 ? data.name.substring(0, 19) + "..." : data.name;
+            return data.name.length > 17 ? data.name.substring(0, 17) + "..." : data.name;
         }
     };
 
@@ -179,7 +181,8 @@ const GameCard: React.FC<GameCardProps> = ({ data, useSecondThumbnail = false, u
                     : useThirdThumbnail && screenWidth > 640 && data.name.length > 15 ? {transform: `translateY(-${110}px)` }
                     : useThirdThumbnail && screenWidth > 640 ? {transform: `translateY(-${120}px)` }
 
-                    : {transform: `translateY(-${121}px)` }} 
+                    : data.name.length > 15 && screenWidth < 640 ? {transform: `translateY(-${105}px)` } 
+                    : {transform: `translateY(-${115}px)` }} 
                 >
 
                     <p className="uppercase text-white font-semibold mt-1" style={{ fontSize: titleFontSize }}>

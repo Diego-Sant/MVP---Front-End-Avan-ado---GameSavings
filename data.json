@@ -102,5 +102,48 @@
       "cheapestSeller": "Steam",
       "sellerLink": "https://store.steampowered.com/app/493520/GTFO/",
       "description": ""
+    },
+    {
+      "name": "The Callisto Protocol",
+      "subname": "",
+      "thumbnailUrl": "https://diego-sant.github.io/QuizApp/img/img238.svg",
+      "secondThumbnailUrl": "",
+      "isNew": false,
+      "price": 33.40,
+      "olderPrice": 162.00,
+      "percentageLess": 79,
+      "isGamePass": false,
+      "cheapestSeller": "Eneba",
+      "sellerLink": "https://www.eneba.com/br/steam-the-callisto-protocol-pc-steam-key-global",
+      "description": ""
+    },
+    {
+      "name": "Shadow of the Tomb Raider: Definitive Edition",
+      "subname": "",
+      "thumbnailUrl": "https://diego-sant.github.io/QuizApp/img/img239.svg",
+      "secondThumbnailUrl": "",
+      "isNew": false,
+      "price": 36.47,
+      "olderPrice": 145.90,
+      "percentageLess": 75,
+      "isGamePass": true,
+      "gamePassLink": "https://www.xbox.com/pt-br/games/store/shadow-of-the-tomb-raider-definitive-edition/BNQQ3WVBNZCQ",
+      "cheapestSeller": "Epic",
+      "sellerLink": "https://store.epicgames.com/pt-BR/p/shadow-of-the-tomb-raider",
+      "description": ""
+    },
+    {
+      "name": "Dying Light 2 Stay Human: Reloaded Edition",
+      "subname": "",
+      "thumbnailUrl": "https://diego-sant.github.io/QuizApp/img/img240.svg",
+      "secondThumbnailUrl": "",
+      "isNew": false,
+      "price": 112.00,
+      "olderPrice": 224.00,
+      "percentageLess": 50,
+      "isGamePass": false,
+      "cheapestSeller": "Epic",
+      "sellerLink": "https://store.epicgames.com/pt-BR/bundles/dying-light-2nd-anniversary-bundle",
+      "description": ""
     }
 ]
