@@ -22,7 +22,7 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="flex flex-col text-white mt-[18.438rem] mb-[2rem]">
+        <footer className="flex flex-col text-white mt-[13.438rem] mb-[2rem]">
             <div className='bg-[#111111] h-[90px] flex items-center'>
                 <div className='max-w-[1064px] m-auto w-[100%]'>
                     <div className='flex justify-center items-center'>
