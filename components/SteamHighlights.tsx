@@ -8,24 +8,24 @@ interface Game {
   id: string;
 }
 
-export default function HighLights() {
-  const [highlights, setHighlights] = useState<Game[]>([]);
+export default function SteamHighLights() {
+  const [steamHighlights, setSteamHighlights] = useState<Game[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchHighlights = async () => {
+    const fetchSteamHighlights = async () => {
       try {
-        const response = await fetch('/api/highlight');
+        const response = await fetch('/api/steamHighlight');
         const data = await response.json();
 
-        setHighlights(data);
+        setSteamHighlights(data);
         setIsLoading(false);
       } catch (error) {
         console.error("Erro ao buscar os jogos:", error);
       }
     };
 
-    fetchHighlights();
+    fetchSteamHighlights();
   }, []);
 
   const LoadingScreen = () => {
@@ -41,17 +41,17 @@ export default function HighLights() {
       
       <div className="flex items-center gap-x-2 mb-4">
         <div className="w-[45px] h-[45px] bg-[#F28500] rounded-full flex items-center justify-center">
-          <Image width={24} height={31} src="/images/Destaques.svg" alt="Ícone de fogo" />
+          <Image width={30} height={30} src="/images/Steam.svg" alt="Ícone da Steam" />
         </div>
-        <p className="text-white uppercase text-[24px] font-semibold">destaques</p>
+        <p className="text-white uppercase text-[24px] font-semibold">Destaques Steam</p>
       </div>
       
       <div className="text-white flex flex-col items-center lg:items-stretch lg:flex-row w-[360px] sm:w-[1064px] h-[450px] gap-[10px]">
 
         <div className='flex flex-1 sm:flex-1 flex-col gap-[10px]'>
           <div className='flex flex-1 gap-[10px] relative overflow-hidden'>
-            {highlights[0] && (
-              <GameCard data={highlights[0]} useSecondThumbnail={true} />
+            {steamHighlights[0] && (
+              <GameCard data={steamHighlights[0]} useSecondThumbnail={true} />
             )}
           </div>
         </div>
@@ -61,16 +61,16 @@ export default function HighLights() {
           <div className='flex flex-1 gap-[10px] relative overflow-hidden'>
             <div className='flex flex-1 flex-col gap-[10px]'>
               <div className='flex flex-1 gap-[10px] relative overflow-hidden'>
-                {highlights[1] && (
-                  <GameCard data={highlights[1]} useThirdThumbnail={true} />
+                {steamHighlights[1] && (
+                  <GameCard data={steamHighlights[1]} useThirdThumbnail={true} />
                 )}
               </div>
             </div>
           </div>
 
           <div className='flex flex-1 gap-[10px] relative overflow-hidden'>
-            {highlights[2] && (
-              <GameCard data={highlights[2]} useThirdThumbnail={true} />
+            {steamHighlights[2] && (
+              <GameCard data={steamHighlights[2]} useThirdThumbnail={true} />
             )}
           </div>
 

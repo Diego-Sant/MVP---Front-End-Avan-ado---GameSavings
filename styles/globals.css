@@ -97,7 +97,54 @@ input:focus + .labelminwidth, input:not(:placeholder-shown) + .labelminwidth {
 
 .swiper-button-prev:after, .swiper-button-next:after {
   font-size: 25px !important;
-  color: white !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+/* ------------------Estilo de input de type range------------------------ */
+
+.range-input {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none; 
+  height: 25px;
+  width: 25px;
+  background-color: #fff !important;
+  border-radius: 50%;
+  border: none;
+  transition: .2s ease-in-out;
+}
+
+.range-input::-moz-range-thumb {
+  height: 25px;
+  width: 25px;
+  background-color: #fff !important;
+  border-radius: 50%;
+  border: none;
+  transition: .2s ease-in-out;
+}
+
+.range-input::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 0 10px rgba(242,133,0, .1)
+}
+.range-input:active::-webkit-slider-thumb {
+  box-shadow: 0 0 0 13px rgba(242,133,0, .2)
+}
+.range-input:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 13px rgba(242,133,0, .2)
+}
+
+.range-input::-moz-range-thumb:hover {
+  box-shadow: 0 0 0 10px rgba(242,133,0, .1)
+}
+.range-input:active::-moz-range-thumb {
+  box-shadow: 0 0 0 13px rgba(242,133,0, .2)
+}
+.range-input:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 13px rgba(242,133,0, .2)    
 }
 
 /* ------------------CSS de Loadings------------------------ */

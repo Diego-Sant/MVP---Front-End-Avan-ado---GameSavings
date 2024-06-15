@@ -50,7 +50,7 @@ export default function BiggerDiscounts() {
   return (
     <main className="relative max-w-[1064px] m-auto w-[100%] flex flex-col justify-center lg:justify-start items-center lg:items-start">
       
-      <div className="flex items-center gap-x-2 mb-2">
+      <div className="flex items-center gap-x-2 mb-4">
         <div className="w-[45px] h-[45px] bg-[#F28500] rounded-full flex items-center justify-center">
           <Image width={35} height={35} src="/images/Descontos.svg" alt="Ícone de porcentagem" />
         </div>

@@ -129,6 +129,7 @@ const GameCard: React.FC<GameCardProps> = ({ data, useSecondThumbnail = false, u
     const lowerBarHeight = useSecondThumbnail ? 90 : useThirdThumbnail ? 75 : 77;
 
     const titleFontSize = data.name.length <= 15 && screenWidth < 640 && useSecondThumbnail ? "26px" :
+        data.name.length <= 15 && screenWidth > 640 && useSecondThumbnail ? "35px" :
         data.name.length <= 15 && screenWidth < 640 ? "22px" :
         data.name.length <= 15 && screenWidth > 640 ? "22px" :
         screenWidth < 640 ? "15px" : "22px";
@@ -168,9 +169,9 @@ const GameCard: React.FC<GameCardProps> = ({ data, useSecondThumbnail = false, u
                 />
 
                 <div className="bg-[#F28500] absolute z-[15] h-[59px] ml-2 px-1 rounded-md" ref={titleRef}
-                    style={useSecondThumbnail && screenWidth < 400 ? {transform: `translateY(-${65}px)` }
-                    : useSecondThumbnail && screenWidth > 640 ? {transform: `translateY(-${70}px)` } 
-                    : useSecondThumbnail && screenWidth < 640 ? {transform: `translateY(-${95}px)` }
+                    style={useSecondThumbnail && screenWidth < 400 ? {transform: `translateY(-${120}px)` }
+                    : useSecondThumbnail && screenWidth > 640 ? {transform: `translateY(-${163}px)` } 
+                    : useSecondThumbnail && screenWidth < 640 ? {transform: `translateY(-${163}px)` }
 
                     : useThirdThumbnail && screenWidth < 400 && data.name.length > 15 ? {transform: `translateY(-${70}px)` }
                     : useThirdThumbnail && screenWidth < 400 ? {transform: `translateY(-${75}px)` }
