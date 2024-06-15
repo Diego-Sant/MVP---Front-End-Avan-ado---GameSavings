@@ -130,8 +130,10 @@ const GameCard: React.FC<GameCardProps> = ({ data, useSecondThumbnail = false, u
 
     const titleFontSize = data.name.length <= 15 && screenWidth < 640 && useSecondThumbnail ? "26px" :
         data.name.length <= 15 && screenWidth > 640 && useSecondThumbnail ? "35px" :
+        data.name.length >= 15 && screenWidth > 640 && useSecondThumbnail ? "28px" :
         data.name.length <= 15 && screenWidth < 640 ? "22px" :
         data.name.length <= 15 && screenWidth > 640 ? "22px" :
+        data.name.length >= 15 && screenWidth < 640 ? "20px" :
         screenWidth < 640 ? "15px" : "22px";
 
 
@@ -142,8 +144,12 @@ const GameCard: React.FC<GameCardProps> = ({ data, useSecondThumbnail = false, u
             return data.name.length > 45 ? data.name.substring(0, 45) + "..." : data.name;
         } else if (useThirdThumbnail) {
             return data.name.length > 40 ? data.name.substring(0, 40) + "..." : data.name;
+        } else if (useSecondThumbnail && screenWidth < 400) {
+            return data.name.length > 20 ? data.name.substring(0, 20) + "..." : data.name;
+        } else if (useSecondThumbnail) {
+            return data.name.length > 22 ? data.name.substring(0, 22) + "..." : data.name;
         } else if (screenWidth < 640) {
-            return data.name.length > 27 ? data.name.substring(0, 27) + "..." : data.name;
+            return data.name.length > 20 ? data.name.substring(0, 20) + "..." : data.name;
         } else {
             return data.name.length > 17 ? data.name.substring(0, 17) + "..." : data.name;
         }
@@ -155,7 +161,7 @@ const GameCard: React.FC<GameCardProps> = ({ data, useSecondThumbnail = false, u
         <div className="flex flex-col rounded-md overflow-hidden" style={getWidthAndHeightStyles()}>
             <div className='w-full h-full relative'>
 
-                {data.isNew && 
+                {data.isNew && (!useThirdThumbnail || screenWidth > 640) &&
                     <span className='absolute flex items-center top-[9px] left-[9px] bg-[#F28500] text-white text-[15px] rounded-md font-semibold px-1 py-1 z-30'>
                         <Image width={16} height={16} src="/images/Novidade.svg" alt="Novidade" className='mr-1' />
                         Novidade
@@ -169,12 +175,14 @@ const GameCard: React.FC<GameCardProps> = ({ data, useSecondThumbnail = false, u
                 />
 
                 <div className="bg-[#F28500] absolute z-[15] h-[59px] ml-2 px-1 rounded-md" ref={titleRef}
-                    style={useSecondThumbnail && screenWidth < 400 ? {transform: `translateY(-${120}px)` }
+                    style={useSecondThumbnail && screenWidth < 400 && data.name.length > 15 ? {transform: `translateY(-${115}px)` }
+                    : useSecondThumbnail && screenWidth > 640 && data.name.length > 15 ? {transform: `translateY(-${158}px)` }
+                    : useSecondThumbnail && screenWidth < 400 ? {transform: `translateY(-${120}px)` }
                     : useSecondThumbnail && screenWidth > 640 ? {transform: `translateY(-${163}px)` } 
                     : useSecondThumbnail && screenWidth < 640 ? {transform: `translateY(-${163}px)` }
 
-                    : useThirdThumbnail && screenWidth < 400 && data.name.length > 15 ? {transform: `translateY(-${70}px)` }
-                    : useThirdThumbnail && screenWidth < 400 ? {transform: `translateY(-${75}px)` }
+                    : useThirdThumbnail && screenWidth < 400 && data.name.length > 15 ? {transform: `translateY(-${67}px)` }
+                    : useThirdThumbnail && screenWidth < 400 ? {transform: `translateY(-${70}px)` }
 
                     : useThirdThumbnail && screenWidth < 640 && data.name.length > 15 ? {transform: `translateY(-${85}px)` }
                     : useThirdThumbnail && screenWidth < 640 ? {transform: `translateY(-${88}px)` } 
@@ -182,7 +190,7 @@ const GameCard: React.FC<GameCardProps> = ({ data, useSecondThumbnail = false, u
                     : useThirdThumbnail && screenWidth > 640 && data.name.length > 15 ? {transform: `translateY(-${110}px)` }
                     : useThirdThumbnail && screenWidth > 640 ? {transform: `translateY(-${110}px)` }
 
-                    : data.name.length > 15 && screenWidth < 640 ? {transform: `translateY(-${105}px)` } 
+                    : data.name.length > 15 && screenWidth < 640 ? {transform: `translateY(-${110}px)` } 
                     : {transform: `translateY(-${115}px)` }} 
                 >
 
@@ -201,27 +209,53 @@ const GameCard: React.FC<GameCardProps> = ({ data, useSecondThumbnail = false, u
 
                     <div className="flex items-center justify-between mr-[0.2rem]">
 
-                        <h1 className='text-[#F28500] -mt-[0.250rem] font-semibold tracking-[-0.81px]' style={useSecondThumbnail ? {fontSize: 48, marginLeft: 40} : useThirdThumbnail ? {fontSize: 34, marginLeft: 45} : {fontSize: 36, marginLeft: 17}}>
-                            R$ {(data?.price).toFixed(2).replace(".", ",")}
-                        </h1>
+                        {data?.olderPrice && data?.percentageLess ? (
+                            <h1 className='text-[#F28500] -mt-[0.250rem] font-semibold tracking-[-0.81px]' style={useSecondThumbnail ? {fontSize: 48, marginLeft: 40} : useThirdThumbnail ? {fontSize: 34, marginLeft: 45} : {fontSize: 36, marginLeft: 17}}>
+                                R$ {(data?.price).toFixed(2).replace(".", ",")}
+                            </h1>
+                        ) : (
+                            <h1 className='text-[#F28500] -mt-[0.250rem] font-semibold tracking-[-0.81px]' style={useSecondThumbnail ? {fontSize: 48, marginLeft: 40, marginTop: 8} : useThirdThumbnail ? {fontSize: 34, marginLeft: 45, marginTop: 8} : {fontSize: 40, marginLeft: 17, marginTop: 7}}>
+                                R$ {(data?.price).toFixed(2).replace(".", ",")}
+                            </h1>
+                        )}
 
-                        <div className="flex -mt-[0.650rem]" style={getStyles()}>
-                            {data?.isGamePass && data?.gamePassLink && (
-                                <div className="bg-[#F28500] rounded-md p-1 w-[60px] h-[40px] flex items-center justify-center cursor-pointer transition hover:bg-[#C26A00]">
-                                    <Link href={data?.gamePassLink} target="_blank">
-                                        <Image width={54} height={26.31} src="/images/GamePass.svg" alt="GamePass" />
-                                    </Link>
-                                </div>
-                            )}
-
-                            {platformImage && data?.sellerLink && (
-                                <div className="bg-[#F28500] rounded-full p-1 flex items-center justify-center cursor-pointer transition hover:bg-[#C26A00] w-[40px] h-[40px]">
-                                    <Link href={data.sellerLink} target="_blank">
-                                        <Image width={platformStyle.width} height={platformStyle.height} src={platformImage} alt={data.cheapestSeller} />
-                                    </Link>
-                                </div>
-                            )}
-                        </div>
+                        {data?.olderPrice && data?.percentageLess ? (
+                            <div className="flex -mt-[0.650rem]" style={getStyles()}>
+                                {data?.isGamePass && data?.gamePassLink && (
+                                    <div className="bg-[#F28500] rounded-md p-1 w-[60px] h-[40px] flex items-center justify-center cursor-pointer transition hover:bg-[#C26A00]">
+                                        <Link href={data?.gamePassLink} target="_blank">
+                                            <Image width={54} height={26.31} src="/images/GamePass.svg" alt="GamePass" />
+                                        </Link>
+                                    </div>
+                                )}
+                        
+                                {platformImage && data?.sellerLink && (
+                                    <div className="bg-[#F28500] rounded-full p-1 flex items-center justify-center cursor-pointer transition hover:bg-[#C26A00] w-[40px] h-[40px]">
+                                        <Link href={data.sellerLink} target="_blank">
+                                            <Image width={platformStyle.width} height={platformStyle.height} src={platformImage} alt={data.cheapestSeller} />
+                                        </Link>
+                                    </div>
+                                )}
+                            </div>
+                        ) : (
+                            <div className="flex mt-[0.2rem]" style={getStyles()}>
+                                {data?.isGamePass && data?.gamePassLink && (
+                                    <div className="bg-[#F28500] rounded-md p-1 w-[60px] h-[40px] flex items-center justify-center cursor-pointer transition hover:bg-[#C26A00]">
+                                        <Link href={data?.gamePassLink} target="_blank">
+                                            <Image width={54} height={26.31} src="/images/GamePass.svg" alt="GamePass" />
+                                        </Link>
+                                    </div>
+                                )}
+                        
+                                {platformImage && data?.sellerLink && (
+                                    <div className="bg-[#F28500] rounded-full p-1 flex items-center justify-center cursor-pointer transition hover:bg-[#C26A00] w-[40px] h-[40px]">
+                                        <Link href={data.sellerLink} target="_blank">
+                                            <Image width={platformStyle.width} height={platformStyle.height} src={platformImage} alt={data.cheapestSeller} />
+                                        </Link>
+                                    </div>
+                                )}
+                            </div>
+                        )}
 
                     </div>
                 </div>

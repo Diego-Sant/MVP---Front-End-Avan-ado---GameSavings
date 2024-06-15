@@ -1,8 +1,7 @@
 import Footer from "@/components/Footer";
 import GameCard from "@/components/GameCard";
+import KinguinHighLights from "@/components/highlights/KinguinHighlights";
 import Navbar from "@/components/Navbar";
-
-import SteamHighLights from "@/components/highlights/SteamHighlights";
 
 import Image from "next/image";
 
@@ -20,11 +19,11 @@ const fetchPosts = async (url: string) => {
     return response.json();
 }
 
-const SteamPage = () => {
+const KinguinPage = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [maxPrice, setMaxPrice] = useState(300);
 
-    const {data} = useSWR(`/api/steam`, fetchPosts);
+    const {data} = useSWR(`/api/kinguin`, fetchPosts);
 
     useEffect(() => {
         const loadingTimer = setTimeout(() => {
@@ -80,7 +79,7 @@ const SteamPage = () => {
             <Navbar />
 
             <div className="mt-[3.375rem]">
-                <SteamHighLights />
+                <KinguinHighLights />
             </div>
 
             <main className="flex-grow marginTopResponsive lg:mt-[5.375rem]">
@@ -113,7 +112,7 @@ const SteamPage = () => {
                             <div className="w-[45px] h-[45px] bg-[#F28500] rounded-full flex items-center justify-center">
                             <Image width={30} height={18.3} src="/images/Computador.svg" alt="Ícone de um computador" />
                             </div>
-                            <p className="text-white uppercase text-[15px] sm:text-[24px] font-semibold">Jogos que são mais baratos na Steam</p>
+                            <p className="text-white uppercase text-[15px] sm:text-[24px] font-semibold">Jogos que são mais baratos no Kinguin</p>
                         </div>
 
                         <div className="flex justify-center">
@@ -135,4 +134,4 @@ const SteamPage = () => {
     )
 }
 
-export default SteamPage;
+export default KinguinPage;

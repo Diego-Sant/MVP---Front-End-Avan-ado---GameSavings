@@ -1,7 +1,7 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
-import HighLights from "@/components/Highlights";
+import HighLights from "@/components/highlights/Highlights";
 import LowerPrices from "@/components/LowerPrices";
 import BiggerDiscounts from "@/components/BiggerDiscounts";
 import MorePopular from "@/components/MorePopular";

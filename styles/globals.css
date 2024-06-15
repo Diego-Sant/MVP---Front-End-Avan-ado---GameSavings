@@ -22,6 +22,8 @@ html {
   @apply h-full;
 }
 
+/* ------------------Css do input------------------------ */
+
 input {
   outline: 2px solid #fff;
   background-color: transparent;
@@ -54,6 +56,8 @@ input:focus + .labelminwidth, input:not(:placeholder-shown) + .labelminwidth {
   }
 }
 
+/* ------------------MarginTop de acordo com a tela------------------------ */
+
 @media screen and (min-width: 640px) and (max-width: 1023px) {
   .marginTopResponsive {
     margin-top: 35rem;
@@ -66,11 +70,14 @@ input:focus + .labelminwidth, input:not(:placeholder-shown) + .labelminwidth {
   }
 }
 
+/* ------------------Hover do navbar------------------------ */
+
 :hover.filter-gray{
   filter: brightness(0) saturate(100%) invert(74%) sepia(2%) saturate(385%) hue-rotate(177deg) brightness(86%) contrast(94%);
   transition: 0.5s;
 }
 
+/* ------------------CSS do MuiMaterial------------------------ */
 
 .css-6hp17o-MuiList-root-MuiMenu-list {
   background-color: #1f1f1f !important;
@@ -86,6 +93,8 @@ input:focus + .labelminwidth, input:not(:placeholder-shown) + .labelminwidth {
   background-color: #1f1f1f !important;
   border-radius: 5%;
 }
+
+/* ------------------CSS do Swiper------------------------ */
 
 .swiper-button-prev:after {
   padding-right: 4px !important;
