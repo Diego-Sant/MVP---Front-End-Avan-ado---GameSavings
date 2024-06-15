@@ -10,6 +10,7 @@ import "swiper/swiper-bundle.css";
 interface Game {
   id: string;
   percentageLess: number;
+  olderPrice: number;
 }
 
 export default function BiggerDiscounts() {
@@ -25,8 +26,8 @@ export default function BiggerDiscounts() {
         const response = await fetch('/api/games');
         const data: Game[] = await response.json();
 
-        const sortedGames = data.sort((a, b) => b.percentageLess - a.percentageLess);
-
+        const filteredGames = data.filter(game => game.olderPrice > 70);
+        const sortedGames = filteredGames.sort((a, b) => b.percentageLess - a.percentageLess);
         const limitedGames = sortedGames.slice(0, 10);
 
         setGames(limitedGames);

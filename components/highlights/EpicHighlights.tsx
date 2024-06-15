@@ -41,7 +41,7 @@ export default function EpicHighLights() {
       
       <div className="flex items-center gap-x-2 mb-4">
         <div className="w-[45px] h-[45px] bg-[#F28500] rounded-full flex items-center justify-center">
-          <Image width={30} height={30} src="/images/Steam.svg" alt="Ícone da Steam" />
+          <Image width={27} height={27} src="/images/Epic.svg" alt="Ícone da Epic Games" />
         </div>
         <p className="text-white uppercase text-[24px] font-semibold">Destaques Epic</p>
       </div>

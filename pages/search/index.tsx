@@ -18,7 +18,12 @@ const fetchPosts = async (url: string) => {
     return response.json();
 }
 
+interface Game {
+    name: string;
+}
+
 const SearchPage = () => {
+    const [shuffledGames, setShuffledGames] = useState<Game[]>([]);
     const router = useRouter();
 
     const search = useSearchParams();
@@ -29,6 +34,21 @@ const SearchPage = () => {
     const [showNoResults, setShowNoResults] = useState(false);
 
     const {data} = useSWR(`/api/search?q=${encodedSearchQuery}`, fetchPosts);
+
+    useEffect(() => {
+        if (data && data.length > 0) {
+            const shuffled = shuffle(data);
+            setShuffledGames(shuffled);
+        }
+    }, [data]);
+
+    const shuffle = (array: Game[]) => {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    };
 
     useEffect(() => {
         const loadingTimer = setTimeout(() => {
@@ -83,9 +103,9 @@ const SearchPage = () => {
                     </p>
                     <div className="flex justify-center">
                         
-                        {data && data.length > 0 ? (
+                        {shuffledGames && shuffledGames.length > 0 ? (
                             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-x-[6.5rem]">
-                                {data.map((game: any) => (
+                                {shuffledGames.map((game: any) => (
                                     <GameCard key={game.id} data={game} />
                                 ))}
                             </div>
