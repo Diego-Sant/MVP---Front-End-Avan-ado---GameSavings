@@ -41,8 +41,8 @@ const GameCard: React.FC<GameCardProps> = ({ data, useSecondThumbnail = false, u
         } else if (screenWidth > 400 && screenWidth < 640) {
           return useSecondThumbnail || useThirdThumbnail
             ? { marginRight: 105, columnGap: 10 }
-            : {};
-        } else {
+            : { marginRight: 2, columnGap: 10};
+        }  else {
           return useSecondThumbnail || useThirdThumbnail
             ? { marginRight: 8, columnGap: 15 }
             : { marginRight: 1, columnGap: 6 };

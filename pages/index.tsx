@@ -15,7 +15,7 @@ export default function Home() {
 
       <main className="flex-grow">
 
-      <div className="flex items-center justify-center mt-[3.438rem]">
+      <div className="flex items-center justify-center mt-[15rem] sm:mt-[9rem]">
         <div className="text-center max-w-md md:max-w-none">
           <p className="uppercase text-[16px] sm:text-[18px] text-white font-bold">
             Descubra onde encontrar o

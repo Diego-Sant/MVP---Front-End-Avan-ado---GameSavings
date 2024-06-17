@@ -49,7 +49,7 @@ export default function Navbar() {
     const open = Boolean(anchorEl);
 
     return (
-        <header className='bg-[#111111] text-white sm:h-[100px] h-[200px] flex items-center'>
+        <header className='bg-[#111111] text-white sm:h-[100px] h-[200px] flex items-center fixed top-0 left-0 right-0 z-50'>
             <nav className='max-w-[1064px] m-auto w-[100%]'>
                 <div className='flex sm:justify-between justify-center flex-col sm:flex-row items-center gap-y-10 sm:gap-y-0'>
                     <div className='gap-x-[1.3125em] flex items-center'>

@@ -76,7 +76,7 @@ const KinguinPage = () => {
     };
 
     return (
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-screen mt-[12rem] sm:mt-[7rem]">
             <Navbar />
 
             <div className="mt-[3.375rem]">
