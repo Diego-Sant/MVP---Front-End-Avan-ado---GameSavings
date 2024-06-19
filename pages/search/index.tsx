@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Footer from "@/components/Footer";
 import GameCard from "@/components/GameCard";
 import Navbar from "@/components/Navbar";
+import LoadingScreen from "@/components/LoadingScreen";
 
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/router";
@@ -86,14 +87,6 @@ const SearchPage = () => {
     
         return () => clearTimeout(loadingTimer);
     }, []);
-
-    const LoadingScreen = () => {
-        return (
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-            <div className="lds-heart"><div></div></div>
-          </div>
-        );
-    };
 
     return (
         <div className="flex flex-col min-h-screen mt-[12rem] sm:mt-[7rem]">

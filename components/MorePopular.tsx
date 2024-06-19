@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import GameCard from "@/components/GameCard";
+import LoadingScreen from "@/components/LoadingScreen";
 
 import Image from "next/image";
 
@@ -39,14 +40,6 @@ export default function MorePopular() {
 
     fetchGames();
   }, []);
-
-  const LoadingScreen = () => {
-    return (
-      <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-        <div className="lds-heart"><div></div></div>
-      </div>
-    );
-  };
 
   return (
     <main className="relative max-w-[1064px] m-auto w-[100%] flex flex-col justify-center lg:justify-start items-center lg:items-start">

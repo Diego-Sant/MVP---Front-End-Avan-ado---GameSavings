@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 import GameCard from "@/components/GameCard";
+import LoadingScreen from "@/components/LoadingScreen";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -43,14 +44,6 @@ export default function BiggerDiscounts() {
 
     fetchGames();
   }, []);
-  
-  const LoadingScreen = () => {
-    return (
-      <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-        <div className="lds-heart"><div></div></div>
-      </div>
-    );
-  };
 
   return (
     <main className="relative max-w-[1064px] m-auto w-[100%] flex flex-col justify-center lg:justify-start items-center lg:items-start">

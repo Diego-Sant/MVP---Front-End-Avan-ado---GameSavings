@@ -7,6 +7,7 @@ import GameCard from "@/components/GameCard";
 import Navbar from "@/components/Navbar";
 
 import NewsHighLights from "@/components/highlights/NewsHighlights";
+import LoadingScreen from "@/components/LoadingScreen";
 
 import Image from "next/image";
 
@@ -68,14 +69,6 @@ const KinguinPage = () => {
               .filter((game: any) => game.price <= maxPrice)
               .sort((a: any, b: any) => b.price - a.price)
     : [];
-
-    const LoadingScreen = () => {
-        return (
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-            <div className="lds-heart"><div></div></div>
-          </div>
-        );
-    };
 
     return (
         <div className="flex flex-col min-h-screen mt-[12rem] sm:mt-[7rem]">
