@@ -53,13 +53,13 @@ npm run seed
 
 - [x] Protótipo em alta fidelidade das três páginas
 - [x] Adição de interatividade ao protótipo
-- [x] O projeto React deve ser visualmente fiel ao protótipo criado no Figma
+- [x] O projeto React deve ser visualmente fiel ao protótipo criado no Figma<br>
 
 - [x] Componentes reutilizáveis
 - [x] Recursos do React como useState, useEffect, useRouter, etc.
 - [x] Reaproveitamento de no mínimo 3 componentes em pelo menos 2 páginas (Navbar, GameCard, LoadingScreen e Footer)
 - [x] Apresentação de uma abordagem criativa e inovadora no design ou nas funcionalidades implementadas
-- [x] Leitura de um arquivo JSON
+- [x] Leitura de um arquivo JSON<br>
 
 - [x] Hospedado no github um projeto público
 - [x] Criar projeto público no Figma e adicionar ao README.md
