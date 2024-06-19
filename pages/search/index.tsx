@@ -1,10 +1,13 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 import Footer from "@/components/Footer";
 import GameCard from "@/components/GameCard";
 import Navbar from "@/components/Navbar";
 
-import {useSearchParams} from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 
 import useSWR from "swr";
 

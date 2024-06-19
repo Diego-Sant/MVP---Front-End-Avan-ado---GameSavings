@@ -1,11 +1,14 @@
-import Footer from "@/components/Footer";
-import GameCard from "@/components/GameCard";
-import KinguinHighLights from "@/components/highlights/KinguinHighlights";
-import Navbar from "@/components/Navbar";
-
-import Image from "next/image";
+"use client";
 
 import { useEffect, useState } from "react";
+
+import Footer from "@/components/Footer";
+import GameCard from "@/components/GameCard";
+import Navbar from "@/components/Navbar";
+
+import KinguinHighLights from "@/components/highlights/KinguinHighlights";
+
+import Image from "next/image";
 
 import useSWR from "swr";
 

@@ -1,12 +1,7 @@
-"use client";
-
-import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Footer() {
-    const router = useRouter();
-
     const suportCategories = [
         { id: 1, text: 'Ajude-nos a melhorar', link: '' },
         { id: 2, text: 'Status de serviço', link: '' },

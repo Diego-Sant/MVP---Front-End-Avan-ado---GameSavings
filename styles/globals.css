@@ -77,6 +77,10 @@ input:focus + .labelminwidth, input:not(:placeholder-shown) + .labelminwidth {
   transition: 0.5s;
 }
 
+.active {
+  filter: brightness(0) saturate(100%) invert(54%) sepia(68%) saturate(2123%) hue-rotate(3deg) brightness(97%) contrast(102%);
+}
+
 /* ------------------CSS do MuiMaterial------------------------ */
 
 .css-6hp17o-MuiList-root-MuiMenu-list {

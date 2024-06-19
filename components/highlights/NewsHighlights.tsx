@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 
-import GameCard from "@/components/GameCard";
-
-import Image from "next/image";
-import NewsGameCard from "../NewsGameCard";
+import NewsGameCard from "@/components/NewsGameCard";
 
 interface Game {
   id: string;

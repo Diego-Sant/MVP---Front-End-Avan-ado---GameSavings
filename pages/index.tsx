@@ -15,9 +15,9 @@ export default function Home() {
 
       <main className="flex-grow">
 
-      <div className="flex items-center justify-center mt-[15rem] sm:mt-[9rem]">
+      <div className="flex items-center justify-center mt-[15rem] sm:mt-[8.8rem]">
         <div className="text-center max-w-md md:max-w-none">
-          <p className="uppercase text-[16px] sm:text-[18px] text-white font-bold">
+          <p className="uppercase text-[16px] sm:text-[18px] text-white font-semibold">
             Descubra onde encontrar o
             <span className="text-[#F28500]"> menor preço </span>
             para seus

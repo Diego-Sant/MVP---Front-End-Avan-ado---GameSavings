@@ -9,7 +9,7 @@ import Image from "next/image";
 import { Menu as MenuIcon } from "@mui/icons-material";
 import { Button, Menu, MenuItem } from "@mui/material";
 
-import SearchInput from "./SearchInput";
+import SearchInput from "@/components/SearchInput";
 
 export default function Navbar() {
     const router = useRouter();
@@ -99,7 +99,7 @@ export default function Navbar() {
                             <div className="flex gap-x-[1.3125em]">
                                 {categories.map((category) => (
                                 <div key={category.id}>
-                                    <Link href={category.link} className="flex items-center justify-center gap-x-1 filter-gray text-[14px]">
+                                    <Link href={category.link} className={`flex items-center justify-center gap-x-1 text-[14px] ${router.pathname === category.link ? 'active' : 'filter-gray'}`}>
                                         {category.icon}
                                         {category.text}
                                     </Link>

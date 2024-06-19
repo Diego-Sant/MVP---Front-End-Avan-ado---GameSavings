@@ -1,6 +1,10 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
-import GameCard from "@/components/GameCard";
+
 import Image from "next/image";
+
+import GameCard from "@/components/GameCard";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -39,7 +43,7 @@ export default function BiggerDiscounts() {
 
     fetchGames();
   }, []);
-
+  
   const LoadingScreen = () => {
     return (
       <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
@@ -60,12 +64,15 @@ export default function BiggerDiscounts() {
 
     <Swiper className="w-[100%]" spaceBetween={16} slidesPerView={3.5} pagination={{clickable: true}}
         navigation={{prevEl: navigationPrevRef.current, nextEl: navigationNextRef.current}}
+        modules={[Navigation]}
+
         onBeforeInit={(swiper) => {
             if (swiper.params.navigation && typeof swiper.params.navigation !== 'boolean') {
                 swiper.params.navigation.prevEl = navigationPrevRef.current;
                 swiper.params.navigation.nextEl = navigationNextRef.current;
             }
-        }} modules={[Navigation]}
+        }} 
+
         breakpoints={{
           320: {
             slidesPerView: 1,
@@ -94,9 +101,9 @@ export default function BiggerDiscounts() {
         ))}
     </Swiper>
 
-        <div ref={navigationPrevRef} className="swiper-button-prev xl:transform xl:translate-x-[-65%] bg-[#F28500] rounded-full p-[24px]"></div>
-        <div ref={navigationNextRef} className="swiper-button-next xl:transform xl:translate-x-[65%] custom-navigation-next bg-[#F28500] rounded-full p-[24px]"></div>
-      {isLoading && <LoadingScreen />}
+    <div ref={navigationPrevRef} className="swiper-button-prev xl:transform xl:translate-x-[-65%] bg-[#F28500] hover:bg-[#C26A00] rounded-full p-[24px]"></div>
+    <div ref={navigationNextRef} className="swiper-button-next xl:transform xl:translate-x-[65%] custom-navigation-next bg-[#F28500] hover:bg-[#C26A00] rounded-full p-[24px]"></div>
+    {isLoading && <LoadingScreen />}
       
     </main>
   );

@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 import Footer from "@/components/Footer";
 import GameCard from "@/components/GameCard";
 import Navbar from "@/components/Navbar";
@@ -5,8 +9,6 @@ import Navbar from "@/components/Navbar";
 import SteamHighLights from "@/components/highlights/SteamHighlights";
 
 import Image from "next/image";
-
-import { useEffect, useState } from "react";
 
 import useSWR from "swr";
 

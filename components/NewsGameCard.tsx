@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect, useRef } from "react";
 
 import Image from "next/image";
@@ -105,8 +107,6 @@ const NewsGameCard: React.FC<NewsGameCardProps> = ({ data }) => {
     const titleFontSize = data.name.length <= 15 && screenWidth < 640 ? "26px" :
         data.name.length <= 15 && screenWidth > 640 ? "35px" :
         data.name.length >= 15 && screenWidth > 640 ? "28px" :
-        data.name.length <= 15 && screenWidth < 640 ? "22px" :
-        data.name.length <= 15 && screenWidth > 640 ? "22px" :
         data.name.length >= 15 && screenWidth < 640 ? "20px" :
         screenWidth < 640 ? "15px" : "22px";
 
