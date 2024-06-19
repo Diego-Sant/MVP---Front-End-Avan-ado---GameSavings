@@ -1,4 +1,6 @@
-# Desenvolvimento Front-end Avançado Puc-Rio MVP
+# GameSavings
+
+## Desenvolvimento Front-end Avançado Puc-Rio MVP
 
 O objetivo deste projeto é oferecer aos clientes as melhores opções para comprar jogos a preços mais acessíveis, podendo ser financeiramente rentáveis através de parcerias , funcionalidades premium ou até mesmo publicidades sem que atrapalhe a experiência do usuário.
 
