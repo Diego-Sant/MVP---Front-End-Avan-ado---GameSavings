@@ -6,10 +6,14 @@
 
 O objetivo deste projeto é oferecer aos clientes as melhores opções para comprar jogos a preços mais acessíveis, podendo ser financeiramente rentáveis através de parcerias , funcionalidades premium ou até mesmo publicidades sem que atrapalhe a experiência do usuário.
 
+  &nbsp;
+
 ---
 ## Projeto no Figma
 
 Projeto feito em alta fidelidade com 4 páginas(Menu principal, página com apenas jogos da Steam, página com apenas novidades e página de pesquisa).
+
+  &nbsp;
 
 As interatividade no protótipo são as seguintes: 
 
@@ -23,6 +27,8 @@ As interatividade no protótipo são as seguintes:
 https://www.figma.com/design/vQAvZ30BPh6tjIUacmHlXu/MVP---GameSavings?node-id=1-346&t=TFNH7hSD7YrrrbXB-1
 ```
 
+  &nbsp;
+
 ---
 ## Como inicializar
 
@@ -32,14 +38,19 @@ Primeiramente usar o comando `npm install` no terminal para instalar quaisquer d
 npm install
 ```
 
+  &nbsp;
+
 Em seguida, criar o arquivo `.env` na raíz do projeto e copiar o `DATABASE_URL` que será enviado junto com o link do github na plataforma da Puc-Rio.
 
+  &nbsp;
 
 Para iniciar a aplicação deverá ser usado o comando `npm run dev`.
 
 ```
 npm run dev
 ```
+
+  &nbsp;
 
 ---
 ## Adicionar jogos no banco de dados
@@ -51,6 +62,8 @@ Após adicionar um novo jogo, use o comando `npm run seed`. O terminal identific
 ```
 npm run seed
 ```
+
+  &nbsp;
 
 ---
 ## Requisitos do MVP
