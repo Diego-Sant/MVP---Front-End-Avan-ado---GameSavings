@@ -1,19 +1,15 @@
-# GameSavings
-
-
-
-## Desenvolvimento Front-end Avançado Puc-Rio MVP
-
-O objetivo deste projeto é oferecer aos clientes as melhores opções para comprar jogos a preços mais acessíveis, podendo ser financeiramente rentáveis através de parcerias , funcionalidades premium ou até mesmo publicidades sem que atrapalhe a experiência do usuário.
+# Desenvolvimento Front-end Avançado Puc-Rio MVP
 
   &nbsp;
+
+## GameSavings
+
+O objetivo deste projeto é oferecer aos clientes as melhores opções para comprar jogos a preços mais acessíveis, podendo ser financeiramente rentáveis através de parcerias , funcionalidades premium ou até mesmo publicidades sem que atrapalhe a experiência do usuário.
 
 ---
 ## Projeto no Figma
 
 Projeto feito em alta fidelidade com 4 páginas(Menu principal, página com apenas jogos da Steam, página com apenas novidades e página de pesquisa).
-
-  &nbsp;
 
 As interatividade no protótipo são as seguintes: 
 
