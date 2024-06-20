@@ -1,5 +1,7 @@
 # GameSavings
 
+
+
 ## Desenvolvimento Front-end Avançado Puc-Rio MVP
 
 O objetivo deste projeto é oferecer aos clientes as melhores opções para comprar jogos a preços mais acessíveis, podendo ser financeiramente rentáveis através de parcerias , funcionalidades premium ou até mesmo publicidades sem que atrapalhe a experiência do usuário.
@@ -30,9 +32,9 @@ Primeiramente usar o comando `npm install` no terminal para instalar quaisquer d
 npm install
 ```
 
-Em seguida, criar o arquivo .env na raíz do projeto e copiar o `DATABASE_URL` que será enviado junto com o link do github na plataforma da Puc-Rio
+Em seguida, criar o arquivo `.env` na raíz do projeto e copiar o `DATABASE_URL` que será enviado junto com o link do github na plataforma da Puc-Rio
 
----
+
 Para iniciar a aplicação deverá ser usado o comando `npm run dev`
 
 ```
@@ -53,18 +55,16 @@ npm run seed
 ---
 ## Requisitos do MVP
 
-- [x] Protótipo em alta fidelidade das três páginas
-- [x] Adição de interatividade ao protótipo
-- [x] O projeto React deve ser visualmente fiel ao protótipo criado no Figma
-$~$
+<p>- [x] Protótipo em alta fidelidade das três páginas</p>
+<p>- [x] Adição de interatividade ao protótipo</p>
+<p>- [x] O projeto React deve ser visualmente fiel ao protótipo criado no Figma</p>
 
-- [x] Componentes reutilizáveis
-- [x] Recursos do React como useState, useEffect, useRouter, etc.
-- [x] Reaproveitamento de no mínimo 3 componentes em pelo menos 2 páginas (Navbar, GameCard, LoadingScreen e Footer)
-- [x] Apresentação de uma abordagem criativa e inovadora no design ou nas funcionalidades implementadas
-- [x] Leitura de um arquivo JSON
-$~$
+<p style="margin-top: 20px;">- [x] Componentes reutilizáveis</p>
+<p>- [x] Recursos do React como useState, useEffect, useRouter, etc.</p>
+<p>- [x] Reaproveitamento de no mínimo 3 componentes em pelo menos 2 páginas (Navbar, GameCard, LoadingScreen e Footer)</p>
+<p>- [x] Apresentação de uma abordagem criativa e inovadora no design ou nas funcionalidades implementadas</p>
+<p>- [x] Leitura de um arquivo JSON</p>
 
-- [x] Hospedado no github um projeto público
-- [x] Criar projeto público no Figma e adicionar ao README.md
-- [x] Instruções no README.md(Título, descrição do projeto e instruções de instalação)
+<p style="margin-top: 20px;">- [x] Hospedado no github um projeto público</p>
+<p>- [x] Criar projeto público no Figma e adicionar ao README.md</p>
+<p>- [x] Instruções no README.md (Título, descrição do projeto e instruções de instalação)</p>
