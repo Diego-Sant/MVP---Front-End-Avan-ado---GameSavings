@@ -26,16 +26,16 @@ https://www.figma.com/design/vQAvZ30BPh6tjIUacmHlXu/MVP---GameSavings?node-id=1-
 ---
 ## Como inicializar
 
-Primeiramente usar o comando `npm install` no terminal para instalar quaisquer dependências que estarão no `package.json`
+Primeiramente usar o comando `npm install` no terminal para instalar quaisquer dependências que estarão no `package.json`.
 
 ```
 npm install
 ```
 
-Em seguida, criar o arquivo `.env` na raíz do projeto e copiar o `DATABASE_URL` que será enviado junto com o link do github na plataforma da Puc-Rio
+Em seguida, criar o arquivo `.env` na raíz do projeto e copiar o `DATABASE_URL` que será enviado junto com o link do github na plataforma da Puc-Rio.
 
 
-Para iniciar a aplicação deverá ser usado o comando `npm run dev`
+Para iniciar a aplicação deverá ser usado o comando `npm run dev`.
 
 ```
 npm run dev
@@ -55,16 +55,20 @@ npm run seed
 ---
 ## Requisitos do MVP
 
-<p>- [x] Protótipo em alta fidelidade das três páginas</p>
-<p>- [x] Adição de interatividade ao protótipo</p>
-<p>- [x] O projeto React deve ser visualmente fiel ao protótipo criado no Figma</p>
+- [x] Protótipo em alta fidelidade das três páginas
+- [x] Adição de interatividade ao protótipo
+- [x] O projeto React deve ser visualmente fiel ao protótipo criado no Figma
 
-<p style="margin-top: 20px;">- [x] Componentes reutilizáveis</p>
-<p>- [x] Recursos do React como useState, useEffect, useRouter, etc.</p>
-<p>- [x] Reaproveitamento de no mínimo 3 componentes em pelo menos 2 páginas (Navbar, GameCard, LoadingScreen e Footer)</p>
-<p>- [x] Apresentação de uma abordagem criativa e inovadora no design ou nas funcionalidades implementadas</p>
-<p>- [x] Leitura de um arquivo JSON</p>
+  &nbsp;
 
-<p style="margin-top: 20px;">- [x] Hospedado no github um projeto público</p>
-<p>- [x] Criar projeto público no Figma e adicionar ao README.md</p>
-<p>- [x] Instruções no README.md (Título, descrição do projeto e instruções de instalação)</p>
+- [x] Componentes reutilizáveis
+- [x] Recursos do React como useState, useEffect, useRouter, etc.
+- [x] Reaproveitamento de no mínimo 3 componentes em pelo menos 2 páginas (Navbar, GameCard, LoadingScreen e Footer)
+- [x] Apresentação de uma abordagem criativa e inovadora no design ou nas funcionalidades implementadas
+- [x] Leitura de um arquivo JSON
+
+  &nbsp;
+
+- [x] Hospedado no github um projeto público
+- [x] Criar projeto público no Figma e adicionar ao README.md
+- [x] Instruções no README.md (Título, descrição do projeto e instruções de instalação)
