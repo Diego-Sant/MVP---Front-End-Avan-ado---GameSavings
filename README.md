@@ -4,7 +4,7 @@
 
 ## GameSavings
 
-O objetivo deste projeto é oferecer aos clientes as melhores opções para comprar jogos a preços mais acessíveis, podendo ser financeiramente rentáveis através de parcerias , funcionalidades premium ou até mesmo publicidades sem que atrapalhe a experiência do usuário.
+O objetivo deste projeto é oferecer aos clientes as melhores opções para comprar jogos a preços mais acessíveis, podendo ser financeiramente rentáveis através de parcerias, funcionalidades premium ou até mesmo publicidades sem que atrapalhe a experiência do usuário.
 
 ---
 ## Projeto no Figma
@@ -18,6 +18,7 @@ As interatividade no protótipo são as seguintes:
 * Animação ao clicar na barra de pesquisa
 * Hover no ícone de pesquisar
 * Funcionalidade da barra do slider de preço
+* Funcionalidade do carrossel de jogos com menores preços e maiores descontos
 
 ```
 https://www.figma.com/design/vQAvZ30BPh6tjIUacmHlXu/MVP---GameSavings?node-id=1-346&t=TFNH7hSD7YrrrbXB-1
@@ -53,7 +54,7 @@ npm run dev
 
 Para testar a funcionalidade do banco de dados, abra o arquivo `data.json`. Você pode copiar um jogo existente ou criar um novo jogo do zero, seguindo as especificações fornecidas em `schema.prisma`. Se optar por copiar e colar, lembre-se de que o `seed.ts` possui uma funcionalidade que impede a duplicação de jogos com o mesmo "name" e/ou "subname". Portanto, ao adicionar um novo jogo, certifique-se de alterar o nome.
 
-Após adicionar um novo jogo, use o comando `npm run seed`. O terminal identificará todos os jogos no arquivo e informará se o novo jogo foi adicionado com sucesso. Se você adicionar um novo jogo sem apagar nada do `data.json`, o terminal exibirá mensagens indicando que alguns jogos não foram adicionados porque já existem no banco de dados. Isso é normal, o novo jogo que você adicionou será confirmado com uma mensagem positiva.
+Após adicionar um novo jogo, use o comando `npm run seed`. O terminal identificará todos os jogos no arquivo e informará se o novo jogo foi adicionado com sucesso. Se você adicionar um novo jogo sem apagar nada do `data.json`, o terminal exibirá mensagens indicando que alguns jogos não foram adicionados porque já existem no banco de dados, isso é normal. O novo jogo que você adicionou será confirmado com uma mensagem positiva.
 
 ```
 npm run seed
@@ -78,6 +79,6 @@ npm run seed
 
   &nbsp;
 
-- [x] Hospedado no github um projeto público
+- [x] Hospedado no github em um projeto público
 - [x] Criar projeto público no Figma e adicionar ao README.md
 - [x] Instruções no README.md (Título, descrição do projeto e instruções de instalação)
